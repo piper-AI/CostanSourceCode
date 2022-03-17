@@ -1,0 +1,21 @@
+
+<html>
+<head>
+</head>
+<script>
+var a;
+    function popitup(a)
+    {
+        window.open(a,
+        'open_window',
+        'menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=no, resizable=no, dependent, width=300, height=620, left=0, top=0')
+    }
+</script>
+<body>
+<form name="popup" >
+<a href="http://www.yahoo.com" onclick="popitup(this.href)">yahoo</a>
+<a href="http://www.google.com" onclick="popitup(this.href))">Google</a>
+<a href="http://www.msn.com" onclick="popitup(this.href))">MSN</a>
+</form>
+</body>
+</html>
