@@ -1,0 +1,98 @@
+<title>MoggyCoin</title>
+
+<img width=159 height=150 src="https://raw.githubusercontent.com/squirrelcom/MoggyCoin/main/A19D8167-591F-4387-9E03-1DA36253E12E.jpeg">
+<h1>MoggyCoin (MC)</h1>
+
+<pre>
+Lolcats, Fun and Currency
+
+How r MoggyCoins laid out?
+ver: MoggyCoin vershun 2
+val: Value ov teh MoggyCoin
+sig: ur chosen signachur 2 validate teh coin in ur naym
+key: ur key iz a sort ov pin 2 verify itz u
+date: teh time dat teh coin wuz mined, in da format YYMMDD (HHMMSS)
+rand: strin ov random characters, encodd in BASE-64 format
+countr: binary countr encodd in BASE-64 format
+
+to be able to transact a coin you must click the golden circle and create a transaction code
+This can be anything you want but after that you must write the date and time of the coin creation
+
+now you can send the coin to anyone via any form of messaging and email. just remember to include the transaction code
+as this proves the reciver has been sent the coin validly
+
+When picking a name choose a really random name not ur signature
+
+MoggyCoin to the Moon!! 🚀🚀🚀🌕🌕🌕
+
+
+</pre
+<p>
+<hr>
+
+<script language=javascript type="text/javascript" src="Mine.js"></script>
+</applet>
+<script language=javascript type="text/javascript">
+
+function myCompleteCallback(result) {
+  document.form1.token.value = result;
+}
+
+function myUpdateCallback(amount) {
+  document.form1.progress.value = (Math.floor(amount*1000)/10) +"%";
+}
+
+function oldOnLoad() {}
+
+function newOnLoad() {
+  hashcashv1_selftest()
+
+  if (oldOnLoad != null)
+    oldOnLoad();
+}
+
+
+function create(form, updateCB, completeCB, string, extn, bits) {
+  form.token.value='Mining...';
+  hashcashv1_create(updateCB, completeCB, string, extn, bits);
+}
+function createJSOnly(form, updateCB, completeCB, string, extn, bits) {
+  form.token.value='Mining...';
+  var saveState = minev2_jsonly;
+  minev2_jsonly=true;
+  hashcashv1_create(updateCB, completeCB, string, extn, bits);
+  minev2_jsonly = saveState;
+}
+oldOnLoad = window.onload;
+window.onload = newOnLoad;
+-->
+</script>
+
+<form name=form1>
+Complete (may take longer): <input type=text name=progress value="0%"><br>
+Signature ( Your Name first letter of your last name and @moggycoin): <input type=text name=string value="johnd@moggycoin"><br>
+Key (this is a sort of pin, Replace the values with numbers or letter): <input type=text name=extn value="key1=value1,value2;key2=valueA,valueB" size=30><br>
+Amount of MoggyCoin (the more MoggyCoin the longer it takes to Mine and we mean way longer!): <select name=bits>
+<option value=001 selected>0.01MC
+<option value=01>0.1MC
+<option value=10>10MC
+<option value=20>20MC
+<option value=25>50MC
+<option value=30>100MC
+</select>
+<br>
+MoggyCoin: <textarea rows=4 cols=64 name=token>Your MoggyCoin will appear here. You can paste an already Mined coin here and then click Test MoggyCoin to see its details and Value</textarea><br>
+
+<input type=button onClick="createJSOnly(form, 'myUpdateCallback', 'myCompleteCallback', form.string.value, form.extn.value, form.bits.value);" value="Mine Sum Coins">
+<input type=button onClick="hashcashv1_check(form.token.value);" value="Test MoggyCoin">
+</form>
+<script src="https://cdn.deadsimplechat.com/production/2.14.3/public/js/embed.js" type="text/javascript"></script>
+            <script>
+        window.DeadSimpleChat.initBubble({
+            location: "https://deadsimplechat.com",
+        size: "small",
+            roomId: "FEOCVdQJl",
+            open: "true"
+        })
+    </script>
+<center><font size="-1">Copyright © 2022, 23 Squirrel Enterprises, MoggyCoin, and Adam</font></center>
