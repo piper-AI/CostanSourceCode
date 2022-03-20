@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>John</title>
+	<link rel="icon" href="chat.png" type="image/x-icon" />
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="md-modal md-effect-1" id="modal-1">
+		<div class="md-content">
+			<h3>Settings</h3>
+			<button class="md-close button2">
+        <img class="icon" src="close.svg"/>
+      </button>
+      <div>
+          <p>Hey John: <img class="warning" src="warning.svg" title="Work in Progress"/></p>
+          <label class="switch">
+            <input type="checkbox" id="checkbox" onclick="checkbox()">
+            <span class="slider round"></span>
+          </label>
+          <p>User Language: <img class="warning" src="warning.svg" title="Only English is Supported"/></p>
+          <select id="select_language" onchange="updateCountry()"></select>
+          <p>User Dialect:</p> 
+          <select id="select_dialect"></select>
+          <p>
+          <hr>
+          <p>John Voice: <img class="warning" src="warning.svg" title="Only English is Supported"/></p>
+          <select id="voiceSelect"></select>
+          <p>John Volume:</p>
+          <input id="volume" type="range" min="0" max="1" value="1" step="0.1">
+          <p>John Rate:</p>
+          <input id="rate" type="range" min="0.1" max="10" value="1" step="0.1">
+          <p>John Pitch:</p>
+          <input id="pitch" type="range" min="0" max="2" value="1" step="0.1">
+      </div>
+    </div>
+  </div>
+
+  <div id="banner">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <span id="notification"></span>
+  </div>
+
+  <button class="md-trigger button2" data-modal="modal-1">
+    <img class="icon" src="other/setting.svg"/>
+  </button>
+  <h1 id="title">John</h1>
+  <h1 id="subtitle">A Virtual Butler V0.1</h1>
+
+  <p id="alert"></p>
+
+  <div id="recognition">
+    <button class="button" onclick="keyboard()">
+      <img class="icon" id="keyboard" src="keyboard.svg"/>
+    </button>
+    <button class="button" onclick="voice()">
+      <img class="icon" id="voice" src="microphone.svg"/>
+    </button>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card bubble" id="user" contenteditable="true"></div>
+    <div class="card bubble" id="omni">
+    </div>
+      <iframe allowfullscreen id="soundcloud" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" src=""></iframe> 
+  </div>
+
+  <div class="md-overlay"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.3.1.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
